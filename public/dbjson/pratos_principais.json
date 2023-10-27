@@ -1,0 +1,75 @@
+{
+    "pedido":[
+        {
+            "id":1,
+            "num_pedido":1,
+            "quantidade":1,
+            "nomePedido":"nome para fazer o pedido",
+            "adicionais":[],
+            "ingredientes":[],
+            "bebidas":[],
+            "valor":0,
+            "tituloPrato":"titulo do prato",
+            "idPrato":1
+        }
+    ],
+    "ingredientes":[
+        {"id":1, "nome":"Mussarella", "img":"/img/ingredientes/queijo.png"},    
+        {"id":2, "nome":"Catupiry", "img":"/img/ingredientes/queijo.png"},    
+        {"id":3, "nome":"Chedar", "img":"/img/ingredientes/queijo.png"},    
+        {"id":4, "nome":"Pimenta", "img":"/img/ingredientes/pimenta.png"},    
+        {"id":5, "nome":"Cebola", "img":"/img/ingredientes/cebola.png"},    
+        {"id":6, "nome":"Tomate", "img":"/img/ingredientes/tomate.png"},    
+        {"id":7, "nome":"Rucula", "img":"/img/ingredientes/rucula.png"},    
+        {"id":8, "nome":"Alface", "img":"/img/ingredientes/alface.png"}    
+    ],
+    "adicionais":[
+        {"id":"1","nome":"+queijo", "img":"/img/ingredientes/queijo.png", "valor":1.50 },
+        {"id":"2","nome":"+carne", "img":"/img/ingredientes/add_carne.png", "valor":2.50  },
+        {"id":"3","nome":"+ fritas", "img":"/img/ingredientes/add_fritas.png", "valor":1.80  },
+        {"id":"4","nome":"+ Katchup", "img":"/img/ingredientes/add_katchup.png", "valor":0.50  },
+        {"id":"5","nome":"+ Mostarda", "img":"/img/ingredientes/add_mostarda.png", "valor":0.50  }
+    ],
+    "bebidas":[
+        {"nome":"água", "preco":1.50},
+        {"nome":"cerveja", "preco":2.00},
+        {"nome":"refrigerante", "preco":3.50},
+        {"nome":"suco", "preco":4.50},
+        {"nome":"soda", "preco":6.00},
+        {"nome":"coca-cola 1,5l", "preco":7.50}
+    ],
+    "pratos": [
+        {
+            "id":1,
+            "nome":"Batata Frita",
+            "grama":"130g",
+            "tipo":"batata",
+            "valor":2.59,
+            "img":"bf_rb_2.png"
+        },
+        {
+            "id":1,
+            "nome":"Hamburguer",
+            "grama":"130g",
+            "tipo":"hamburguer",
+            "valor":2.59,
+            "img":"hb.png"
+        },
+        {
+            "id":1,
+            "nome":"Crepe",
+            "grama":"130g",
+            "tipo":"crepe",
+            "valor":2.59,
+            "img":"crepe.jpg"
+        },
+        {
+            "id":1,
+            "nome":"Bombado",
+            "grama":"130g",
+            "tipo":"cachorro_quente",
+            "valor":2.59,
+            "img":"hd.png"
+        }
+    ]
+}

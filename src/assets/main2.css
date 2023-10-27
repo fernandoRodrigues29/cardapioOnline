@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+.mainBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ul{
+	list-style: none;
+}
+.none{
+	display: none;
+	visibility: hidden;
+}
+body{
+	background-color: #c3c3c3;
+	display: flex;
+	justify-content: center;
+}
+
+
+.secaoCardapio{
+	border:1px solid #ccc;
+	border-radius: 16%;
+	background-color: #fff;
+	max-width: 390px;
+	padding: 20px 19px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}

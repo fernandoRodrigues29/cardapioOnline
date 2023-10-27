@@ -1,0 +1,62 @@
+{
+    "pedido":[
+        {
+            "id":1,
+            "num_pedido":1,
+            "quantidade":1,
+            "nome_do_pedido":"nome do pedido",
+            "adicioanis":[],
+            "bebidas":[],
+            "prato":"id do prato"
+        }
+    ],
+    "adicionais":[
+        {"id":"1","nome":"+queijo"},
+        {"id":"2","nome":"+carne"},
+        {"id":"3","nome":"+ fritas"},
+        {"id":"4","nome":"+ molho 1"},
+        {"id":"5","nome":"+ molho 2"}
+    ],
+    "bebidas":[
+        {"nome":"água", "preco":1.50},
+        {"nome":"cerveja", "preco":2.00},
+        {"nome":"refrigerante", "preco":3.50},
+        {"nome":"suco", "preco":4.50},
+        {"nome":"soda", "preco":6.00},
+        {"nome":"coca-cola 1,5l", "preco":7.50}
+    ],
+    "pratos": [
+        {
+            "id":1,
+            "nome":"Batata Frita",
+            "grama":"130g",
+            "tipo":"batata",
+            "valor":"R$ 2,59",
+            "img":"bf_rb_2.png"
+        },
+        {
+            "id":1,
+            "nome":"Hamburguer",
+            "grama":"130g",
+            "tipo":"hamburguer",
+            "valor":"R$ 2,59",
+            "img":"hb_rb.png"
+        },
+        {
+            "id":1,
+            "nome":"Crepe",
+            "grama":"130g",
+            "tipo":"crepe",
+            "valor":"R$ 2,59",
+            "img":"crepe.jpg"
+        },
+        {
+            "id":1,
+            "nome":"Bombado",
+            "grama":"130g",
+            "tipo":"cachorro_quente",
+            "valor":"R$ 2,59",
+            "img":"hd.png"
+        }
+    ]
+}

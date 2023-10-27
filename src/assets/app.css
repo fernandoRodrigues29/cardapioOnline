@@ -1,0 +1,102 @@
+#app2{
+	margin: 0 auto;
+	border:1px solid #ccc;
+	border-radius: 16px;
+	background-color: #fff;
+	width: 470px;
+    /* height: 100vh; */
+	padding: 20px 19px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo img {
+    width: 13rem;
+}
+/* lista */
+.subiTitulo{
+    margin-bottom: 8vh;
+}
+
+#listaProduto{
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+   
+}
+
+.listaProdutoItem{
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid #dfdbdb;
+    border-radius: 8px;
+    font-size: 10px;
+    animation: scale-up-center 1s;
+}
+
+.ativo{
+    background: linear-gradient(to right,#fd4141,#f17313);
+    color: #fff;
+}
+/* itens recomendados */
+#cardsRecomendadosList{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.cardsRecomendadosItem{
+    border: 1px solid #f17313;
+    border-radius: 8px;
+    padding: 52px 21px 17px;
+    flex: 1 0 140px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166,173,201,0.2);
+    animation: scale-up-center calc(.1s * var(--i));
+}
+.imgBox{
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.imgBox img{
+    border-radius: 50%;
+}
+.cardsRecomendadosItem img{
+    width: 74px;
+}
+.descricaoBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+.acaoBox{
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    border: none;
+    padding: 10px 8px;
+    background-color: aliceblue;
+    color: #202020;
+    font-size: 10px;
+    text-decoration: none;
+    transition: .3s;
+}
+.btn:hover{
+ color: #fff;
+ background-color: #f17313;
+ box-shadow: 1px 1px 2px #ccc;
+ border: 0px solid #000;
+}
+
