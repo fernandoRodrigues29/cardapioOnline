@@ -53,7 +53,8 @@ export default {
 		return{
            imgP2:'/img/produtos/bf_rb_2.png',
 			logo:'/img/logo.jpg',
-            baseJson:"http://localhost:5173/dbjson/pratos_principais.json",
+            baseJson:"/dbjson/pratos_principais.json",
+            // baseJson:"http://localhost:5173/dbjson/pratos_principais.json",
             pedido:'',
             guicheNumber:0,
             contadorTempo:"00:00",
@@ -138,13 +139,7 @@ export default {
  @import '@/assets/main2.css';
  @import '@/assets/ingredientes.css';
  @import '@/assets/animacao.css';
- 
- /* ./font-awesome-4.7.0/css/font-awesome.min.css */
- /* @import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css '; */
- 
-  /* @import '@/assets/main2.css';
-  @import '@/assets/app.css';
-  @import '@/assets/animacao.css'; */
+
   .valorBox{
     font-size: 3rem;
     color:orangered

@@ -158,7 +158,8 @@ export default {
 			imgP1:imgProd1,
 			imgP2:'/img/produtos/bf_rb_2.png',
 			logo:'/img/logo.jpg',
-			baseJson:"http://localhost:5173/dbjson/pratos_principais.json",
+			baseJson:"/dbjson/pratos_principais.json",
+			// baseJson:"http://localhost:5173/dbjson/pratos_principais.json",
 			listProdutos:[]
 
 		}
