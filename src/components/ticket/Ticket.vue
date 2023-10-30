@@ -13,16 +13,22 @@
         </div>
     </header>
     <div class="imagemGrande">
-        <img src="/img/produtos/hb-rb.png" alt="">
+        <img :src="imagemProduto" alt="">
     </div>
     <div class="tituloValorTiketBox">
-        <div class="prato">{{this.pedido.tituloPrato}}</div>
-        <div class="valorBox">R$ {{this.pedido.valor}}</div>
+        <div class="prato">
+           <h2>
+               {{this.pedido.tituloPrato}}
+           </h2> 
+        </div>
+        <div class="valorBox">
+            <b>R$ {{this.pedido.valor}}</b>
+        </div>
     </div>
    
     <div class="tiketBox">
         <div class="numeroBox">
-            <span><b>{{this.guicheNumber}}</b></span>
+            <span><b>{{this.guicheNumber | formatarNumeros}}</b></span>
             
             <!-- <span>{{this.guicheNumber.slice(0,4)}}</span> -->
             <!-- <span>-</span>
@@ -31,6 +37,10 @@
             <span>{{this.guicheNumber.slice(8,10)}}</span> -->
            
         </div>
+    </div>
+    <div>
+        <span>Tempo para Entrega:</span>
+        <span>{{contadorTempo}}</span>
     </div>
 </div>
 </template>
@@ -41,30 +51,26 @@ export default {
     name:'Ticket',
     data(){
 		return{
-            imgPerfil:"/img/face1.png",
-            imgQueijo:'/img/ingredientes/queijo.png',
-            imgPimenta:'/img/ingredientes/pimenta.png',
-            imgCebola:'/img/ingredientes/cebola.png',
-            imgTomate:'/img/ingredientes/tomate.png',
-            imgRucula:'/img/ingredientes/rucula.png',
-            imgAlface:'/img/ingredientes/alface.png',
-			imgP1:'',
-			imgP2:'/img/produtos/bf_rb_2.png',
+           imgP2:'/img/produtos/bf_rb_2.png',
 			logo:'/img/logo.jpg',
             baseJson:"http://localhost:5173/dbjson/pratos_principais.json",
             pedido:'',
-            guicheNumber:0
+            guicheNumber:0,
+            contadorTempo:"00:00",
+            imagemProduto:''
 		}
     },
     methods:{
 		async carregarListas(){
-            const req = await fetch(this.baseJson);
-			    const data = await req.json();
-                    console.log('conteudo',data);
+                let dataProduto = localStorage.getItem('produto_salvo');
+                let produtoObj = JSON.parse(dataProduto); 
+                console.log('produto:',produtoObj);
+                this.imagemProduto =  `/img/produtos/${produtoObj.img}`;
 
             //carregar pedido
             let dataPedido = localStorage.getItem('pedido_salvo');
                 let pedidoObj = JSON.parse(dataPedido); 
+                console.log('pedido:',pedidoObj);
                     this.pedido=pedidoObj;
                     this.guicheNumber = this.gerarNumeroPedido();
 
@@ -73,10 +79,56 @@ export default {
         gerarNumeroPedido(){
             let randonNumbers = Math.random().toString().slice(2,12);
             return randonNumbers
+        },
+        gerarContadorTempo(){
+            var minutos = 20;
+            var segundos = 60;
+            var exibirMinutos='00';
+            var exibirSegundos='00';
+                var intervalo = setInterval(()=>{
+                    segundos--;
+
+                        if(segundos < 0){
+                            minutos--;
+                            segundos = 3;
+                                if(minutos <= 0 && segundos <= 0){
+                                    minutos=0;
+                                    segundos=0
+                                }
+                        }
+                        
+                        exibirMinutos = minutos;
+                        exibirSegundos = segundos;
+
+                        if(minutos < 10){
+                            exibirMinutos = `0${minutos}`; 
+                        }
+                        if(segundos < 10){
+                            exibirSegundos = `0${segundos}`; 
+                        }
+
+                        this.contadorTempo = `${exibirMinutos}:${exibirSegundos}`;
+                            if(minutos <= 0){
+                                if(segundos <= 0){
+                                            console.log('parou a contagem!');
+                                                clearInterval(intervalo);
+                                }
+                            }
+                },1000);
+        },
+        filtroNumero(){
+
+        }
+
+    },
+    filters:{
+        formatarNumeros(str){
+            return `${str.slice(1,4)} - ${str.slice(4,4)}`
         }
     },
     mounted(){
         this.carregarListas();
+        this.gerarContadorTempo();
     }
 }
 </script>
@@ -93,4 +145,12 @@ export default {
   /* @import '@/assets/main2.css';
   @import '@/assets/app.css';
   @import '@/assets/animacao.css'; */
+  .valorBox{
+    font-size: 3rem;
+    color:orangered
+  }
+  .numeroBox{
+    font-size: 44px;
+    color: #84807d;
+  }
 </style>

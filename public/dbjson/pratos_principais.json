@@ -10,7 +10,8 @@
             "bebidas":[],
             "valor":0,
             "tituloPrato":"titulo do prato",
-            "idPrato":1
+            "idPrato":1,
+            "img":""
         }
     ],
     "ingredientes":[
